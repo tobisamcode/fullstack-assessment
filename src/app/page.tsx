@@ -150,13 +150,13 @@ export default function HomePage() {
           </form>
         </section>
 
-        <div className="flex gap-4 justify-start items-start">
+        <div className="flex flex-col md:flex-row gap-4 justify-start items-start">
           <FilterPanel
             consultants={consultants}
             onFilterChange={handleFilterChange}
           />
 
-          <section className="grid  gap-6 w-[50%]  lg:mx-auto">
+          <section className="grid  gap-6 md:w-[50%]  lg:mx-auto">
             {isLoadingEval ? (
               Array.from({ length: 6 }).map((_, idx) => (
                 <div
