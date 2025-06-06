@@ -65,15 +65,17 @@ A lightweight Next.js & TypeScript full-stack application that helps clients eva
 1. **Clone the repository**
 
    ```bash
-   git clone https://github.com/your-username/consultant-assessment-app.git
-   cd consultant-assessment-app
+   git clone https://github.com/tobisamcode/fullstack-assessment.git
+   cd fullstack-assessment
    ```
 
 2. **Install dependencies**
 
    ```bash
-   npm install
+   pnpm install
    # or
+   npm install
+    # or
    yarn install
    ```
 
@@ -81,16 +83,18 @@ A lightweight Next.js & TypeScript full-stack application that helps clients eva
    In the project root, create a file named `.env.local` with:
 
    ```dotenv
-   NEXT_PUBLIC_OPENAI_API_KEY=your_openai_api_key_here
+   OPENAI_API_KEY=your_openai_api_key_here
    ```
 
    - Replace `your_openai_api_key_here` with a valid OpenAI API key.
-   - The frontend uses `NEXT_PUBLIC_OPENAI_API_KEY` to call the `/api/evaluate` route.
+   - The frontend uses `OPENAI_API_KEY` to call the `/api/evaluate` route.
 
 4. **Run in development mode**
 
    ```bash
-   npm run dev
+   pnpm run dev
+   # or
+   npm dev
    # or
    yarn dev
    ```
@@ -100,8 +104,8 @@ A lightweight Next.js & TypeScript full-stack application that helps clients eva
 5. **Build and start for production**
 
    ```bash
-   npm run build
-   npm run start
+   pnpm run build
+   pnpm run start
    # or
    yarn build
    yarn start
@@ -240,9 +244,9 @@ No other variables are required for the mock consultant data routes.
 │  │   └─ evaluate/
 │  │       └─ route.ts       # POST /api/evaluate
 │  ├─ components/
-│  │   ├─ FilterPanel.tsx
-│  │   ├─ ConsultantCard.tsx
-│  │   ├─ TypingText.tsx
+│  │   ├─ filter-panel.tsx
+│  │   ├─ consultant-card.tsx
+│  │   ├─ typing-text.tsx
 │  │   └─ … (other shared UI components)
 │  ├─ data.ts                # Mock consultant profiles
 │  ├─ page.tsx               # HomePage component
