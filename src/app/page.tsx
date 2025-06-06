@@ -141,6 +141,7 @@ export default function HomePage() {
               </Button>
               <Button
                 variant="outline"
+                className="border-orange-500"
                 onClick={handleEvaluateAll}
                 disabled={isLoadingEval || consultants.length === 0}
               >

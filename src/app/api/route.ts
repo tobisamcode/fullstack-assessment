@@ -1,4 +1,4 @@
-export async function GET(request: Request) {
+export async function GET() {
   return new Response("API's are ready", {
     status: 200,
     headers: {},

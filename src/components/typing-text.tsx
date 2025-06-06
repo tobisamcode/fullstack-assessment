@@ -1,4 +1,3 @@
-// components/TypingText.tsx
 "use client";
 
 import { useState, useEffect } from "react";
@@ -31,6 +30,5 @@ export default function TypingText({
     return () => clearInterval(interval);
   }, [text, speed, onComplete]);
 
-  // Use a <span> instead of <p> so you can nest it inside a <p> or other inline block.
   return <span className="whitespace-pre-wrap">{displayed}</span>;
 }

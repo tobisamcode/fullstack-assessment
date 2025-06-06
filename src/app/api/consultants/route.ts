@@ -1,5 +1,3 @@
-// app/api/consultants/route.ts
-
 import { NextResponse } from "next/server";
 import consultants from "@/app/data";
 import type { Consultant, JobDescription } from "@/app/type";

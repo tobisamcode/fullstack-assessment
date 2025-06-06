@@ -17,7 +17,6 @@ const FilterPanel: React.FC<FilterPanelProps> = ({
   consultants,
   onFilterChange,
 }) => {
-  // Derive unique locations and experience ranges
   const [locations, setLocations] = useState<string[]>([]);
   useEffect(() => {
     const locs = Array.from(new Set(consultants.map((c) => c.location)));
@@ -30,18 +29,16 @@ const FilterPanel: React.FC<FilterPanelProps> = ({
     { label: "6+ years", value: "6+" },
   ];
 
-  // Local state for filter values
   const [selectedLocation, setSelectedLocation] = useState("");
   const [selectedExperience, setSelectedExperience] = useState("");
   const [keyword, setKeyword] = useState("");
 
-  // Whenever any filter changes, call onFilterChange
   useEffect(() => {
     onFilterChange({ selectedLocation, selectedExperience, keyword });
-  }, [selectedLocation, selectedExperience, keyword]);
+  }, [selectedLocation, selectedExperience, keyword, onFilterChange]);
 
   return (
-    <div className="mb-6 grid gap-4 sm:grid-cols-2 sticky top-8 bg-white w-[40%] p-4 border rounded-md">
+    <div className="mb-6 grid gap-4 sm:grid-cols-2 sticky top-8 bg-white w-[40%] p-4 border-2 border-orange-600 rounded-md">
       {/* Location Filter */}
       <div>
         <label className="flex items-center gap-2 text-sm font-medium text-gray-700 mb-2">
@@ -65,8 +62,6 @@ const FilterPanel: React.FC<FilterPanelProps> = ({
           </SelectContent>
         </Select>
       </div>
-
-      {/* Experience Filter */}
       <div>
         <label className="flex items-center gap-2 text-sm font-medium text-gray-700 mb-2">
           <Timer className="text-orange-500" size={20} />
@@ -90,7 +85,6 @@ const FilterPanel: React.FC<FilterPanelProps> = ({
         </Select>
       </div>
 
-      {/* Keyword Filter */}
       <div>
         <label className="flex items-center gap-2 text-sm font-medium text-gray-700 mb-2  ">
           <Command className="text-orange-500" size={20} />
