@@ -150,43 +150,45 @@ export default function HomePage() {
           </form>
         </section>
 
-        <FilterPanel
-          consultants={consultants}
-          onFilterChange={handleFilterChange}
-        />
-      </div>
+        <div className="flex gap-4 justify-start items-start">
+          <FilterPanel
+            consultants={consultants}
+            onFilterChange={handleFilterChange}
+          />
 
-      <section className="grid mt-[90px] gap-6 lg:grid-cols-2 max-w-4xl lg:mx-auto">
-        {isLoadingEval ? (
-          Array.from({ length: 6 }).map((_, idx) => (
-            <div
-              key={idx}
-              className="border rounded-lg p-4 shadow-sm animate-pulse"
-            >
-              <div className="flex flex-col h-full gap-2">
-                <Skeleton className="h-6 w-2/3 mb-2" />
-                <Skeleton className="h-4 w-1/2 mb-2" />
-                <Skeleton className="h-4 w-1/2 mb-4" />
-                <Skeleton className="h-4 w-full mb-1" />
-                <Skeleton className="h-4 w-full mb-1" />
-                <Skeleton className="h-4 w-3/4" />
-              </div>
-            </div>
-          ))
-        ) : consultantsToDisplay.length > 0 ? (
-          consultantsToDisplay.map((consultant) => (
-            <ConsultantCard
-              key={consultant.id}
-              consultant={consultant}
-              evaluation={evaluations[consultant.id]}
-            />
-          ))
-        ) : (
-          <p className="col-span-full text-center text-gray-500">
-            No consultants match filters.
-          </p>
-        )}
-      </section>
+          <section className="grid  gap-6 w-[50%]  lg:mx-auto">
+            {isLoadingEval ? (
+              Array.from({ length: 6 }).map((_, idx) => (
+                <div
+                  key={idx}
+                  className="border rounded-lg p-4 shadow-sm animate-pulse"
+                >
+                  <div className="flex flex-col h-full gap-2">
+                    <Skeleton className="h-6 w-2/3 mb-2" />
+                    <Skeleton className="h-4 w-1/2 mb-2" />
+                    <Skeleton className="h-4 w-1/2 mb-4" />
+                    <Skeleton className="h-4 w-full mb-1" />
+                    <Skeleton className="h-4 w-full mb-1" />
+                    <Skeleton className="h-4 w-3/4" />
+                  </div>
+                </div>
+              ))
+            ) : consultantsToDisplay.length > 0 ? (
+              consultantsToDisplay.map((consultant) => (
+                <ConsultantCard
+                  key={consultant.id}
+                  consultant={consultant}
+                  evaluation={evaluations[consultant.id]}
+                />
+              ))
+            ) : (
+              <p className="col-span-full text-center text-gray-500">
+                No consultants match filters.
+              </p>
+            )}
+          </section>
+        </div>
+      </div>
     </div>
   );
 }
