@@ -38,7 +38,7 @@ const FilterPanel: React.FC<FilterPanelProps> = ({
   }, [selectedLocation, selectedExperience, keyword, onFilterChange]);
 
   return (
-    <div className="mb-6 grid gap-4 sm:grid-cols-2 sticky top-8 bg-white w-[40%] p-4 border-2 border-orange-600 rounded-md">
+    <div className="mb-6 grid gap-4 sm:grid-cols-2 sticky top-8 bg-white w-full md:w-[40%] p-4 border-2 border-orange-600 rounded-md">
       {/* Location Filter */}
       <div>
         <label className="flex items-center gap-2 text-sm font-medium text-gray-700 mb-2">

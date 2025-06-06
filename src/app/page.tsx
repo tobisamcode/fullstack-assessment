@@ -157,7 +157,7 @@ export default function HomePage() {
             onFilterChange={handleFilterChange}
           />
 
-          <section className="grid  gap-6 md:w-[50%]  lg:mx-auto">
+          <section className="grid  gap-6 w-full md:w-[50%]  lg:mx-auto">
             {isLoadingEval ? (
               Array.from({ length: 6 }).map((_, idx) => (
                 <div
